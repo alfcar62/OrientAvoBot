@@ -1,0 +1,124 @@
+{
+    "intents": [
+        {
+            "tag": "saluto",
+            "patterns": [
+                "Ciao",
+                "Ciao!",
+                "Buongiorno.",
+                "Buongiorno!",
+                "Salve", 
+                "Salve!",
+                "Ehi",
+                "Ciao bot",
+                "Come va?",
+                "Come Stai?",
+                "Hello",
+                "Hey",
+                "Buonasera",
+                "Ciao Avogadro",
+                "Buondì"
+            ],
+            "responses": [
+                "Ciao! Questa è l'Avogadro, la nostra scuola, cosa vuoi sapere?",
+                "Ciao! Come posso aiutarti oggi per conoscere l'Avogadro?",
+                "Benvenuto! Ti serve un consiglio per orientarti in Avogadro?",
+                "Ciao, tutto bene? Come posso aiutarti per conoscere l'Avogadro?",
+                "Ciao, come posso aiutarti in Avogadro ?",
+                "Ciao, hai bisogno di un consiglio sull'Avogadro ?"
+            ]
+        },
+         {
+            "tag": "aiuto",
+            "patterns": [
+                "Ciao, cosa posso fare in questa chat?",
+                "Cosa posso fare in questa chat?!",
+                "A cosa serve questa chat?",
+                "Perchè questa chat?",
+                "Cosa devo fare?", 
+                "Mi aiuti?",
+                "Aiuto",
+                "Help",
+                "Di quali argomenti ti occupi?",
+                "Chi sei?",
+                "Cosa posso fare?",
+                "A cosa servi?",
+                "Cosa posso fare per te?",
+                "Cosa posso fare?",
+                "Cosa devo fare?"
+            ],
+            "responses": [
+                "Ciao! Sono Avo-Bot e posso aiutarti a conoscere meglio la nostra scuola",
+                "Benvenuto! Ti serve un consiglio?",
+                "Ciao, tutto bene? Come posso aiutarti per orientarti?",
+                "Ciao, come posso aiutarti per migliorare l'ambiente?",
+                "Ciao, cosa vuoi sapere della nostra scuola?"
+            ]
+        },
+        {
+            "tag": "informatica_perchè",
+            "patterns": [  
+                "Perchè scegliere informatica?",
+                "Perché fare la specializzione  informatica?",
+                "Perchè informatica?",
+                "Perché è importante informatica?",
+                "Motivi per scegliere informatica",
+                "Perché dovrei scegliere informatica?"
+            ],
+            "responses": [
+                "L'informatica è molto importante nel mondo del lavoro",
+                "Scegliere informatica offre parecchie possibilità di lavoro",
+                "Gli informatici sono molto richiesti in varie aziende"
+            ]
+        },
+             {
+            "tag": "dipartimenti",
+            "patterns": [  
+                "Quali dipartimenti ci sono?",
+                "Quali dipartimenti avete?",
+                "Quali dipartimenti?",
+                "Quanti dipartimenti?",
+                "Dipartimenti"
+            ],
+            "responses": [
+              "In Avogadro ci sono 4 dipartimenti: Informatica, Meccanica, Elettrotecnica, Liceo",
+              "In Avogadro ci sono i dipartimenti di  Informatica, Meccanica, Elettrotecnica, Liceo",
+              "Ci  sono i  seguenti dipartimenti:  Informatica, Meccanica, Elettrotecnica, Liceo"
+            ]
+        },
+        {
+            "tag": "grazie",
+            "patterns": [
+                "Grazie",
+                "Grazie!",
+                "Grazie mille",
+                "Grazie per l'aiuto",
+                "Grazie, a dopo"
+            ],
+            "responses": [
+                "Grazie a te! Ogni azione sostenibile conta!",
+                "Di nulla! Continua a fare la differenza per l'ambiente!"
+            ]
+        },
+          {
+            "tag": "fine",
+            "patterns": [
+                "Grazie, basta così",
+              "In Avogadro ci sono 4 dipartimenti: Informatica, Meccanica, Elettrotecnica, Liceo",
+                 "Grazie, finito!",
+                "Ok, a presto",
+                "Basta così",
+                "Ciao, ho finito",
+                "Arrivederci",
+                "Buona giornata",
+                "Grazie, a dopo"
+            ],
+            "responses": [
+                "Grazie a te! Ogni azione sostenibile conta!",
+                "Ciao! Torna presto per altri consigli.",
+                "Di nulla! Continua a fare la differenza per l'ambiente!",
+                "Arrivederci! Ricorda di essere eco-friendly!"
+            ]
+        }
+    ]
+}
