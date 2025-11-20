@@ -86,6 +86,139 @@
               "Ci  sono i  seguenti dipartimenti:  Informatica, Meccanica, Elettrotecnica, Liceo"
             ]
         },
+         {
+            "tag": "preside",
+            "patterns": [  
+                "Come si chiama il dirigente scolastico?",
+                "Come si chiama il preside?",
+                "preside?",
+                "dirigente?",
+                "Chi è il dirigente scolastico?",
+                "Chi è il preside?"         
+            ],
+            "responses": [
+              "Il dirigente si chiama Anna Luisa Chiappetta",
+              "La Preside si chiama Anna Luisa Chiappetta", 
+              "La Preside è l'ing. Anna Luisa Chiappetta",
+              "La dirigente scolastica è l'ing. Anna Luisa Chiappetta"
+            ]
+           },
+           {
+            "tag": "vicepresidenza",
+            "patterns": [  
+                "Come si chiama il vicepreside?",
+                "Come si chiama la vicepreside?",
+                "Motivi per scegliere informatica",
+                "vicario?",
+                "vicepreside?",
+                "vice preside?",
+                "Chi è il dirigente vicario?",
+                "Chi è il vicepreside?",
+                "Chi è la vicepreside?"          
+            ],
+            "responses": [
+              "La vicepreside si chiama Laura Panaro",
+              "La vicepreside si chiama Laura Panaro", 
+              "La vicepreside è la prof.ssa Laura Panaro"
+            ]
+           },
+         {
+            "tag": "QuantiStudenti",
+            "patterns": [  
+                "Quanti studenti?",
+                "Numero di studenti?",
+                "Quanti alunni?",
+                "Numero di alunni?",
+                "Quanti studenti ci sono?",
+                "Quanti iscritti",
+                "numero di iscritti"      
+            ],
+            "responses": [
+              "Nella nostra scuola ci sono circa 1300 studenti",
+              "Sono iscritti circa 1300 studenti",
+              "xxxxxxx"
+            ]
+           },
+           {
+            "tag": "QuantiDocenti",
+            "patterns": [  
+                "Quanti docenti?",
+                "Numero di docenti?",
+                "Quanti docenti ci sono?",
+                "Quanti insegnanti",
+                "numero di insegnanti",
+                "Quanti professori",
+                "numero di professori"        
+            ],
+            "responses": [
+              "Nella nostra scuola ci sono circa 120 docenti",
+              "Nella nostra scuola ci sono circa 120 insegnanti",
+              "Nella nostra scuola ci sono circa 120 professori",
+              "Insegnano circa 120 docenti",
+              "Insegnano circa 120 docenti",
+              "xxxxxxx"
+            ]
+           },
+           {
+            "tag": "QuanteSezioni",
+            "patterns": [  
+                "Quante sezioni ci sono?",
+                "Numero di sezioni?",
+                "Sezioni?"      
+            ],
+            "responses": [
+              "Puoi essere più preciso?",
+              "Nella nostra scuola ci sono quattro sezioni di informatica, tre di liceo, una di meccanico ed una di elettrotecnica. Esiste anche un progetto Cambridge in lingua inglese",
+              "xxxxxxx"
+            ]
+           },
+           {
+            "tag": "QuanteSezioniLiceo",
+            "patterns": [  
+                "Quante sezioni di liceo ci sono?",
+                "Numero di sezioni di liceo?",
+                "Liceo" 
+            ],
+            "responses": [
+              "Nella nostra scuola ci sono 3 sezioni di liceo scientifico tecnologico (A,B,C)",
+              "Nella nostra scuola ci sono tre sezioni di liceo",
+              "Esistono tre sezioni di Liceo Scientifico Tecnologico"
+            ]
+           },
+         {
+            "tag": "nome",
+            "patterns": [  
+                "Perchè si chiama Avogadro?",
+                "da cosa deriva il nome della scuala?",
+                "nome della scuola?",
+                "perchè questo nome?",
+                "nome?",
+                "perchè Avogadro?",
+                "perchè nome Avogadro?",
+                "etimologia"        
+            ],
+            "responses": [
+              "La scuola è dedicata ad Amedeo Avogadro, famoso matematico",
+              "xxxxx"
+            ]
+           },
+            {
+            "tag": "storia",
+            "patterns": [  
+                "Quando è stata fondata la scuola?",
+                "Quando è stata fondato l'Avogadro?",
+                "Quando è stata fondata?",
+                "A quando risale la storia della scuola??",
+                "storia?",
+                "La storia?",
+                "risale?",
+                "Quanti anni ha?"        
+            ],
+            "responses": [
+              "La scuola è stata fondata alla fine dell'ottocento",
+              "xxxxx"
+            ]
+           },
         {
             "tag": "grazie",
             "patterns": [
@@ -104,8 +237,8 @@
             "tag": "fine",
             "patterns": [
                 "Grazie, basta così",
-              "In Avogadro ci sono 4 dipartimenti: Informatica, Meccanica, Elettrotecnica, Liceo",
-                 "Grazie, finito!",
+                "In Avogadro ci sono 4 dipartimenti: Informatica, Meccanica, Elettrotecnica, Liceo",
+                "Grazie, finito!",
                 "Ok, a presto",
                 "Basta così",
                 "Ciao, ho finito",
@@ -119,6 +252,32 @@
                 "Di nulla! Continua a fare la differenza per l'ambiente!",
                 "Arrivederci! Ricorda di essere eco-friendly!"
             ]
-        }
+        },
+{
+  "tag": "mappa_scuola",
+  "patterns": [
+    "Dove si trova la palestra?",
+    "Hai una mappa della scuola?",
+    "Mappa scuola",
+    "Come trovo le aule?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa interattiva della scuola qui: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata della scuola: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "sitoWeb",
+  "patterns": [
+    "Qual'è il sito Web della scuola?",
+    "sito web?",
+    "quale il sito della scuola?",
+    "web?"
+  ],
+  "responses": [
+    "Puoi consultare il sito web della scuola: <a href=\"https://www.itisavogadro.edu.it \" target=\"_blank\">Apri il sito Web</a>",
+    "Ecco la mappa dettagliata della scuola: <a href=\"https://www.itisavogadro.edu.it \" target=\"_blank\">Clicca qui</a>"
+]
+}
     ]
 }
