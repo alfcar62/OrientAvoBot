@@ -91,6 +91,7 @@
             "patterns": [  
                 "Come si chiama il dirigente scolastico?",
                 "Come si chiama il preside?",
+                "Come si chiama la preside?",
                 "preside?",
                 "dirigente?",
                 "Chi è il dirigente scolastico?",
@@ -135,8 +136,7 @@
             ],
             "responses": [
               "Nella nostra scuola ci sono circa 1300 studenti",
-              "Sono iscritti circa 1300 studenti",
-              "xxxxxxx"
+              "Sono iscritti circa 1300 studenti"
             ]
            },
            {
@@ -155,8 +155,7 @@
               "Nella nostra scuola ci sono circa 120 insegnanti",
               "Nella nostra scuola ci sono circa 120 professori",
               "Insegnano circa 120 docenti",
-              "Insegnano circa 120 docenti",
-              "xxxxxxx"
+              "Insegnano circa 120 docenti"
             ]
            },
            {
@@ -198,8 +197,8 @@
                 "etimologia"        
             ],
             "responses": [
-              "La scuola è dedicata ad Amedeo Avogadro, famoso matematico",
-              "xxxxx"
+              "La scuola è dedicata ad Amedeo Avogadro, famoso fisico e chimico",
+              "La scuola prende il nome da Amedeo Avogadro (1776-1856) è stato un fisico e chimico italiano, noto per la sua Legge di Avogadro (1811)"
             ]
            },
             {
@@ -215,8 +214,7 @@
                 "Quanti anni ha?"        
             ],
             "responses": [
-              "La scuola è stata fondata alla fine dell'ottocento",
-              "xxxxx"
+              "La scuola è stata fondata alla fine dell'ottocento"
             ]
            },
         {
@@ -247,10 +245,10 @@
                 "Grazie, a dopo"
             ],
             "responses": [
-                "Grazie a te! Ogni azione sostenibile conta!",
+                "Grazie a te! Spero che l'Avogadro possa piacerti",
                 "Ciao! Torna presto per altri consigli.",
-                "Di nulla! Continua a fare la differenza per l'ambiente!",
-                "Arrivederci! Ricorda di essere eco-friendly!"
+                "Di nulla! Se vuoi continua pure a chiedere!",
+                "Arrivederci! Ricorda di passare a trovarci!"
             ]
         },
 {
@@ -264,6 +262,102 @@
   "responses": [
     "Puoi consultare la mappa interattiva della scuola qui: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata della scuola: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_scuola_piano_terra",
+  "patterns": [
+    "Piano terra",
+    "Hai una mappa del piano terra?",
+    "Hai la mappa del piano terra?",
+    "Come trovo il piano terra?",
+    "cosa c'è al piano terra?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa del piano terra qui: <a href=\"https://openlevelup.net/?l=0#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata del piano terra: <a href=\"https://openlevelup.net/?l=0#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_scuola_piano_primo",
+  "patterns": [
+    "Piano primo",
+    "Primo piano",
+    "1. piano",
+    "Hai una mappa del 1.o piano?",
+    "Hai una mappa del primo piano?",
+    "Hai la mappa del primo piano?",
+    "Come trovo il primo piano?",
+    "cosa c'è al primo piano ?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa del primo piano  qui: <a href=\"https://openlevelup.net/?l=1#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata del primo piano : <a href=\"https://openlevelup.net/?l=1#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_scuola_piano_secondo",
+  "patterns": [
+    "Piano secondo",
+    "secondo piano",
+    "2. piano",
+    "Hai una mappa del 2.o piano?",
+    "Hai una mappa del secondo piano?",
+    "Hai la mappa del secondo piano?",
+    "Come trovo il secondo piano?",
+    "cosa c'è al secondo piano ?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa del secondo piano  qui: <a href=\"https://openlevelup.net/?l=2#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata del secondo piano : <a href=\"https://openlevelup.net/?l=2#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_scuola_piano_terzo",
+  "patterns": [
+    "Piano terzo",
+    "terzo piano",
+    "3. piano",
+    "Hai una mappa del 3.o piano?",
+    "Hai una mappa del terzo piano?",
+    "Hai la mappa del terzo piano?",
+    "Come trovo il terzo piano?",
+    "cosa c'è al terzo piano ?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa del terzo piano  qui: <a href=\"https://openlevelup.net/?l=3#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata del terzo piano : <a href=\"https://openlevelup.net/?l=3#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_scuola_piano_quarto",
+  "patterns": [
+    "Piano quarto",
+    "quarto piano",
+    "4. piano",
+    "Hai una mappa del 4.o piano?",
+    "Hai una mappa del quarto piano?",
+    "Hai la mappa del quarto piano?",
+    "Come trovo il quarto piano?",
+    "cosa c'è al quarto piano ?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa del quarto piano  qui: <a href=\"https://openlevelup.net/?l=4#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata del quarto piano : <a href=\"https://openlevelup.net/?l=4#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
+]
+},
+{
+  "tag": "mappa_palestra",
+  "patterns": [
+    "mappa Palestra",
+    "Mappa della palestra",
+    "dove si trova la palestra?",
+    "Hai una mappa della palestra?",
+    "Dove trovo la palestra?"
+  ],
+  "responses": [
+    "Puoi consultare la mappa della palestra qui: <a href=https://openlevelup.net/?l=0#21/45.07062/7.69238 \"\" target=\"_blank\">Apri la mappa</a>",
+    "Ecco la mappa dettagliata della palestra : <a href=\"https://openlevelup.net/?l=0#21/45.07062/7.69238 \" target=\"_blank\">Clicca qui</a>"
 ]
 },
 {
