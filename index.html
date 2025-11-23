@@ -99,12 +99,29 @@
       border-top: 1px solid #eee;
       display: flex;
       gap: 10px;
+      align-items: center;
     }
     #input { flex: 1; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 25px; outline: none; font-size: 14px; transition: border-color 0.3s; }
     #input:focus { border-color: #4caf50; }
     button { padding: 12px 24px; background: #4caf50; color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: 600; transition: background 0.3s; }
     button:hover { background: #45a049; }
     button:active { transform: scale(0.98); }
+
+    /* Microfono */
+    .mic-btn {
+      padding: 10px 14px;
+      background: #2196f3;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .mic-btn.listening {
+      background: #e53935;
+      transform: scale(1.15);
+    }
 
     @media (max-width: 600px) {
       #chat-container { height: 100vh; border-radius: 0; }
@@ -139,6 +156,7 @@
     </div>
 
     <div class="input-container">
+      <button id="mic-btn" class="mic-btn">🎤</button>
       <input id="input" type="text" placeholder="Scrivi un messaggio..." autocomplete="off">
       <button onclick="sendMessage()">Invia</button>
     </div>
@@ -150,13 +168,14 @@ const messages = document.getElementById("messages");
 const mouth = document.getElementById("mouth");
 const leftEye = document.querySelector('.eye.left .pupil');
 const rightEye = document.querySelector('.eye.right .pupil');
+const micBtn = document.getElementById("mic-btn");
 
-let mouthInterval;
-let movementInterval;
+let mouthInterval, movementInterval;
 
+// Animazione bocca e occhi
 function animateMouthStart() {
-  if (mouthInterval) clearInterval(mouthInterval);
-  if (movementInterval) clearInterval(movementInterval);
+  clearInterval(mouthInterval);
+  clearInterval(movementInterval);
   mouthInterval = setInterval(() => { mouth.style.height = Math.random() > 0.5 ? '25px' : '10px'; }, 100);
   movementInterval = setInterval(() => {
     const x = Math.random() * 6 - 3;
@@ -174,6 +193,7 @@ function animateMouthStop() {
   rightEye.style.transform = 'translate(0,0)';
 }
 
+// Sintesi vocale
 function botSpeak(text) {
   const msg = new SpeechSynthesisUtterance(text);
   msg.lang = 'it-IT';
@@ -193,9 +213,45 @@ function botSpeak(text) {
   messages.scrollTop = messages.scrollHeight;
 }
 
-input.addEventListener("keypress", function(event) { if(event.key==="Enter") sendMessage(); });
+// --- 🎤 RICONOSCIMENTO VOCALE ---
+let recognition;
+let recognizing = false;
+
+if ("webkitSpeechRecognition" in window) {
+  recognition = new webkitSpeechRecognition();
+  recognition.lang = "it-IT";
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  recognition.onstart = () => {
+    recognizing = true;
+    micBtn.classList.add("listening");
+  };
+  recognition.onend = () => {
+    recognizing = false;
+    micBtn.classList.remove("listening");
+  };
+  recognition.onresult = (event) => {
+    const text = event.results[0][0].transcript;
+    input.value = text;
+    sendMessage();
+  };
+}
+
+micBtn.addEventListener("click", () => {
+  if (!recognition) {
+    alert("Il riconoscimento vocale non è supportato su questo dispositivo.");
+    return;
+  }
+  if (recognizing) recognition.stop();
+  else recognition.start();
+});
+
+// Invio con Enter
+input.addEventListener("keypress", function(event){ if(event.key==="Enter") sendMessage(); });
 input.focus();
 
+// Invio messaggio
 async function sendMessage() {
   const msg = input.value.trim();
   if(!msg) return;
