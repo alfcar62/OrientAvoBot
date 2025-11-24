@@ -31,14 +31,6 @@
       color: white;
       padding: 20px;
       text-align: center;
-      position: relative;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 10px;
     }
     .logo {
       width: 100px;
@@ -46,13 +38,11 @@
       border-radius: 12px;
       object-fit: cover;
       border: 3px solid white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .header h2 { margin: 0; font-size: 1.5em; }
-    .header p { margin-top: 5px; font-size: 0.9em; opacity: 0.9; }
 
     .avatar { width: 120px; height: 120px; margin: 10px auto; position: relative; }
-    .head { width: 120px; height: 120px; background: #ffe0b2; border-radius: 50%; position: relative; margin: 0 auto; }
+    .head { width: 120px; height: 120px; background: #ffe0b2; border-radius: 50%; position: relative; }
     .hair { width: 100px; height: 30px; background: #6d4c41; border-radius: 50% 50% 0 0; position: absolute; top: 0; left: 10px; }
     .eye { width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; top: 40px; border: 2px solid black; }
     .eye.left { left: 30px; } 
@@ -60,42 +50,41 @@
     .pupil { width: 7px; height: 7px; background: black; border-radius: 50%; position: absolute; top: 4px; left: 4px; transition: transform 0.1s; }
     .mouth { width: 50px; height: 10px; background: black; border-radius: 25px; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); transition: height 0.1s; }
 
+    /* VOICE TOGGLE */
+    .voice-toggle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
     #messages { flex: 1; overflow-y: auto; padding: 15px; display: flex; flex-direction: column; gap: 12px; background: #fafafa; }
-    .msg { max-width: 80%; padding: 12px 16px; border-radius: 18px; line-height: 1.4; animation: fadeIn 0.3s ease-in; }
-    @keyframes fadeIn { from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
+    .msg { max-width: 80%; padding: 12px 16px; border-radius: 18px; line-height: 1.4; }
     .user { align-self: flex-end; background: #2196f3; color: white; border-bottom-right-radius: 6px; }
-    .bot { align-self: flex-start; background: #e8f5e9; color: #333; border-bottom-left-radius: 6px; border: 1px solid #c8e6c9; }
+    .bot { align-self: flex-start; background: #e8f5e9; border-bottom-left-radius: 6px; border: 1px solid #c8e6c9; }
 
     .input-container { padding: 20px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px; align-items: center; }
-    #input { flex: 1; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 25px; outline: none; font-size: 14px; transition: border-color 0.3s; }
-    #input:focus { border-color: #4caf50; }
-    button { padding: 12px 24px; background: #4caf50; color: white; border: none; border-radius: 25px; cursor: pointer; font-weight: 600; transition: background 0.3s; }
-    button:hover { background: #45a049; }
-    button:active { transform: scale(0.98); }
+    #input { flex: 1; padding: 12px; border: 2px solid #e0e0e0; border-radius: 25px; }
+    button { padding: 12px 24px; background: #4caf50; color: white; border: none; border-radius: 25px; cursor: pointer; }
 
     .mic-btn {
       padding: 10px 14px;
       background: #2196f3;
       color: white;
-      border: none;
       border-radius: 50%;
       font-size: 18px;
-      cursor: pointer;
-      transition: 0.2s;
     }
-    .mic-btn.listening { background: #e53935; box-shadow: 0 0 15px #e53935; transform: scale(1.15); }
+    .mic-btn.listening { background: #e53935; transform: scale(1.15); }
 
-    @media (max-width: 600px) { #chat-container { height: 100vh; border-radius: 0; } body { padding: 0; } }
   </style>
 </head>
 <body>
   <div id="chat-container">
     <div class="header">
-      <div class="logo-container">
-        <img src="/img/LogoAvogadro.png" alt="Logo Avogadro" class="logo">
-      </div>
+      <img src="/img/LogoAvogadro.png" class="logo" alt="logo">
       <h2>🌟 GustAvo 🌟</h2>
-      <p>Il tuo assistente per orientarti in Avogadro</p>
     </div>
 
     <div class="avatar">
@@ -107,15 +96,21 @@
       </div>
     </div>
 
+    <!-- 🔊 TOGGLE VOCE -->
+    <div class="voice-toggle">
+      <input type="checkbox" id="voiceToggle" checked>
+      <label for="voiceToggle">🔊 Attiva voce</label>
+    </div>
+
     <div id="messages">
       <div class="msg bot">
-        <span class="strong">GustAvo:</span> Ciao! Sono il tuo assistente in Avogadro. 💚<br>Puoi chiedermi informazioni sulla scuola!
+        <span class="strong">GustAvo:</span> Ciao! Sono il tuo assistente in Avogadro 💚<br>Come posso aiutarti?
       </div>
     </div>
 
     <div class="input-container">
       <button id="mic-btn" class="mic-btn">🎤</button>
-      <input id="input" type="text" placeholder="Scrivi un messaggio..." autocomplete="off">
+      <input id="input" type="text" placeholder="Scrivi un messaggio...">
       <button onclick="sendMessage()">Invia</button>
     </div>
   </div>
@@ -124,83 +119,108 @@
 const input = document.getElementById("input");
 const messages = document.getElementById("messages");
 const mouth = document.getElementById("mouth");
-const leftEye = document.querySelector('.eye.left .pupil');
-const rightEye = document.querySelector('.eye.right .pupil');
+const leftP = document.querySelector('.eye.left .pupil');
+const rightP = document.querySelector('.eye.right .pupil');
 const micBtn = document.getElementById("mic-btn");
+const voiceToggle = document.getElementById("voiceToggle");
 
-let mouthInterval, movementInterval;
+let mouthInterval, eyeInterval;
 
-// Bocca e occhi animati
-function animateMouthStart() {
-  clearInterval(mouthInterval); clearInterval(movementInterval);
-  mouthInterval = setInterval(() => { mouth.style.height = Math.random()*15+10+'px'; }, 80);
-  movementInterval = setInterval(() => {
-    const x = Math.random()*6-3; const y = Math.random()*6-3;
-    leftEye.style.transform = `translate(${x}px,${y}px)`;
-    rightEye.style.transform = `translate(${x}px,${y}px)`;
+// ----------------- ANIMAZIONI -----------------
+function animateStart() {
+  mouthInterval = setInterval(() => {
+    mouth.style.height = (Math.random()*18 + 8) + "px";
+  }, 80);
+
+  eyeInterval = setInterval(() => {
+    const x = Math.random()*6 - 3;
+    const y = Math.random()*6 - 3;
+    leftP.style.transform = `translate(${x}px,${y}px)`;
+    rightP.style.transform = `translate(${x}px,${y}px)`;
   }, 80);
 }
-function animateMouthStop() {
-  clearInterval(mouthInterval); clearInterval(movementInterval);
-  mouth.style.height = '10px'; leftEye.style.transform='translate(0,0)'; rightEye.style.transform='translate(0,0)';
+function animateStop() {
+  clearInterval(mouthInterval);
+  clearInterval(eyeInterval);
+  mouth.style.height = "10px";
+  leftP.style.transform = "translate(0,0)";
+  rightP.style.transform = "translate(0,0)";
 }
 
-// Suono ping
-function playPing() {
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  const oscillator = audioCtx.createOscillator();
-  oscillator.type = 'triangle'; oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
-  oscillator.connect(audioCtx.destination); oscillator.start(); oscillator.stop(audioCtx.currentTime+0.1);
-}
-
-// Sintesi vocale
+// ----------------- BOT PARLA -----------------
 function botSpeak(text) {
-  playPing();
+  const voiceEnabled = voiceToggle.checked;
+
+  // Mostra messaggio comunque
+  const bubble = document.createElement("div");
+  bubble.className = "msg bot";
+  bubble.innerHTML = `<span class="strong">GustAvo:</span> ${text}`;
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+
+  // Se voce OFF → stop
+  if (!voiceEnabled) return;
+
   const msg = new SpeechSynthesisUtterance(text);
-  msg.lang = 'it-IT';
-  const voices = window.speechSynthesis.getVoices();
-  const studentVoice = voices.find(v => v.lang.includes('it') && v.name.toLowerCase().includes('male')) || voices[0];
-  msg.voice = studentVoice; msg.pitch=1.5; msg.rate=1.1;
-  msg.onstart = () => animateMouthStart();
-  msg.onend = () => animateMouthStop();
+  msg.lang = "it-IT";
+  msg.pitch = 1.4;
+  msg.rate = 1.1;
+
+  msg.onstart = animateStart;
+  msg.onend = animateStop;
+
   window.speechSynthesis.speak(msg);
-
-  const p = document.createElement("div");
-  p.className = 'msg bot';
-  p.innerHTML = `<span class="strong">GustAvo:</span> ${text}`;
-  messages.appendChild(p); messages.scrollTop = messages.scrollHeight;
 }
 
-// Riconoscimento vocale semplice
-let recognition, recognizing=false;
-if("webkitSpeechRecognition" in window){
+// ----------------- AUDIO MICROFONO -----------------
+let recognition, recognizing = false;
+if ("webkitSpeechRecognition" in window) {
   recognition = new webkitSpeechRecognition();
-  recognition.lang="it-IT"; recognition.continuous=false; recognition.interimResults=false;
-  recognition.onstart=()=>{recognizing=true; micBtn.classList.add("listening");};
-  recognition.onend=()=>{recognizing=false; micBtn.classList.remove("listening");};
-  recognition.onresult=(e)=>{ const text = e.results[0][0].transcript; input.value=text; sendMessage(); };
+  recognition.lang = "it-IT";
+  recognition.continuous = false;
+
+  recognition.onstart = () => {
+    recognizing = true;
+    micBtn.classList.add("listening");
+  };
+  recognition.onend = () => {
+    recognizing = false;
+    micBtn.classList.remove("listening");
+  };
+  recognition.onresult = e => {
+    input.value = e.results[0][0].transcript;
+    sendMessage();
+  };
 }
-micBtn.addEventListener("click",()=>{ if(!recognition){ alert("Riconoscimento vocale non supportato"); return;} recognizing?recognition.stop():recognition.start(); });
+micBtn.onclick = () => {
+  if (!recognition) { alert("Riconoscimento vocale non supportato"); return; }
+  recognizing ? recognition.stop() : recognition.start();
+};
 
-// Invio messaggio
-input.addEventListener("keypress", e=>{ if(e.key==="Enter") sendMessage(); });
-input.focus();
+// ----------------- INVIO MESSAGGIO -----------------
+async function sendMessage() {
+  const msg = input.value.trim();
+  if (!msg) return;
 
-async function sendMessage(){
-  const msg=input.value.trim(); if(!msg) return;
-  const userDiv=document.createElement('div');
-  userDiv.className='msg user';
-  userDiv.innerHTML=`<span class="strong">Tu:</span> ${msg}`;
-  messages.appendChild(userDiv); messages.scrollTop=messages.scrollHeight;
-  input.value='';
-  try{
-    const response = await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({message:msg})});
-    if(!response.ok) throw new Error(`Errore HTTP: ${response.status}`);
-    const data = await response.json();
-    botSpeak(data.answer);
-  }catch(err){
-    console.error(err);
-    botSpeak(`Errore di connessione: ${err.message}`);
+  const bubble = document.createElement("div");
+  bubble.className = "msg user";
+  bubble.innerHTML = `<span class="strong">Tu:</span> ${msg}`;
+  messages.appendChild(bubble);
+  messages.scrollTop = messages.scrollHeight;
+
+  input.value = "";
+
+  try {
+    const res = await fetch("/chat", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ message: msg })
+    });
+
+    const data = await res.json();
+    botSpeak(data.answer || "Non ho capito bene 😅");
+  } catch {
+    botSpeak("Errore di connessione.");
   }
 }
 </script>
