@@ -163,8 +163,8 @@ function botSpeak(text) {
 
   const msg = new SpeechSynthesisUtterance(text);
   msg.lang = "it-IT";
-  msg.pitch = 1.4;
-  msg.rate = 1.1;
+  msg.pitch = 1.6;
+  msg.rate = 1.15;
 
   msg.onstart = animateStart;
   msg.onend = animateStop;
