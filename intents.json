@@ -27,7 +27,8 @@
                 "Ciao, sono Gustavo,  tutto bene? Come posso aiutarti per conoscere l'Avogadro?",
                 "Ciao, come posso aiutarti in Avogadro ?",
                 "Ciao, hai bisogno di un consiglio sull'Avogadro ?"
-            ]
+            ],
+            "author": "A.Carlone"
         },
          {
             "tag": "aiuto",
@@ -54,7 +55,8 @@
                 "Ciao, tutto bene? Come posso aiutarti per orientarti?",
                 "Ciao, sono GustAvo, come posso aiutarti per conoscere meglio la nostra scuola?",
                 "Ciao, cosa vuoi sapere della nostra scuola?"
-            ]
+            ],
+            "author": "A.Carlone"
         },
         {
             "tag": "informatica_perchè",
@@ -70,7 +72,8 @@
                 "L'informatica è molto importante nel mondo del lavoro",
                 "Scegliere informatica offre parecchie possibilità di lavoro",
                 "Gli informatici sono molto richiesti in varie aziende"
-            ]
+            ],
+            "author": "A.Carlone"
         },
              {
             "tag": "dipartimenti",
@@ -85,7 +88,8 @@
               "In Avogadro ci sono 4 dipartimenti: Informatica, Meccanica, Elettrotecnica, Liceo",
               "In Avogadro ci sono i dipartimenti di  Informatica, Meccanica, Elettrotecnica, Liceo",
               "Ci  sono i  seguenti dipartimenti:  Informatica, Meccanica, Elettrotecnica, Liceo"
-            ]
+            ],
+            "author": "A.Carlone"
         },
          {
             "tag": "preside",
@@ -103,7 +107,8 @@
               "La Preside si chiama Anna Luisa Chiappetta", 
               "La Preside è l'ing. Anna Luisa Chiappetta",
               "La dirigente scolastica è l'ing. Anna Luisa Chiappetta"
-            ]
+            ],
+            "author": "A.Carlone"
            },
            {
             "tag": "vicepresidenza",
@@ -122,7 +127,8 @@
               "La vicepreside si chiama Laura Panaro",
               "La vicepreside si chiama Laura Panaro", 
               "La vicepreside è la prof.ssa Laura Panaro"
-            ]
+            ],
+            "author": "A.Carlone"
           },
          {
             "tag": "QuantiStudenti",
@@ -138,7 +144,8 @@
             "responses": [
               "Nella nostra scuola ci sono circa 1300 studenti",
               "Sono iscritti circa 1300 studenti"
-            ]
+            ],
+            "author": "A.Carlone"
            },
            {
             "tag": "QuantiDocenti",
@@ -157,7 +164,8 @@
               "Nella nostra scuola ci sono circa 120 professori",
               "Insegnano circa 120 docenti",
               "Insegnano circa 120 docenti"
-            ]
+            ],
+            "author": "A.Carlone"
            },
            {
             "tag": "QuanteSezioni",
@@ -169,7 +177,8 @@
             "responses": [
               "Puoi essere più preciso?",
               "Nella nostra scuola ci sono quattro sezioni di informatica, tre di liceo, una di meccanico ed una di elettrotecnica. Esiste anche un progetto Cambridge in lingua inglese"
-            ]
+            ],
+            "author": "A.Carlone"
            },
            {
             "tag": "QuanteSezioniLiceo",
@@ -182,7 +191,8 @@
               "Nella nostra scuola ci sono 3 sezioni di liceo scientifico tecnologico (A,B,C)",
               "Nella nostra scuola ci sono tre sezioni di liceo",
               "Esistono tre sezioni di Liceo Scientifico Tecnologico"
-            ]
+            ],
+            "author": "A.Carlone"
            },
          {
             "tag": "nome",
@@ -199,7 +209,8 @@
             "responses": [
               "La scuola è dedicata ad Amedeo Avogadro, famoso fisico e chimico",
               "La scuola prende il nome da Amedeo Avogadro (1776-1856) è stato un fisico e chimico italiano, noto per la sua Legge di Avogadro (1811)"
-            ]
+            ],
+            "author": "A.Carlone"
            },
             {
             "tag": "storia",
@@ -215,7 +226,8 @@
             ],
             "responses": [
               "La scuola è stata fondata alla fine dell'ottocento"
-            ]
+            ],
+            "author": "A.Carlone"
            },
         {
             "tag": "grazie",
@@ -229,7 +241,8 @@
             "responses": [
                 "Grazie a te! Quando vuoi altre informazioni chiamami!",
                 "Di nulla! Se vuoi altre informazioni chiamami ancora!"
-            ]
+            ],
+            "author": "A.Carlone"
         },
           {
             "tag": "fine",
@@ -249,25 +262,8 @@
                 "Ciao! Torna presto per altri consigli.",
                 "Di nulla! Se vuoi continua pure a chiedere!",
                 "Arrivederci! Ricorda di passare a trovarci!"
-            ]
-        },
-		{
-            "tag": "trasporti",
-            "patterns": [
-				"Quali sono le fermate presenti vicino all'Avo?",
-				"Come raggiungere la scuola?",
-				"Quali sono i mezzi più vicini?",
-				"Come posso raggiungere l'Avogadro?",
-				"Come posso arrivare a scuola?",
-				"Che mezzi posso usare per arrivare a scuola?",
-				"Quali tram posso prendere per arrivare a scuola?",
-				"Quali pullman posso prendere per arrivare a scuola?"
             ],
-            "responses": [
-				"Puoi prendere il 16, 18, 68, 6, 13, 56, 61, 3, 8",
-				"Dalla stazione Porta Nuova puoi prendere il 6, 61, 68 e il 18",
-				"Dalla stazione Porta Susa puoi prendere il 56 e il 13"
-            ]
+            "author": "A.Carlone"
         },
 {
   "tag": "mappa_scuola",
@@ -280,7 +276,8 @@
   "responses": [
     "Puoi consultare la mappa interattiva della scuola qui: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata della scuola: <a href=\"https://openlevelup.net/#18/45.07061/7.69247 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+  "author": "A.Carlone"
 },
 {
   "tag": "mappa_aulamagna",
@@ -295,7 +292,8 @@
   "responses": [
     "Puoi vedere l'aula magna qui: <a href=\"https://openlevelup.net/?l=1#21/45.07059/7.69218 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata dell'aula magna: <a href=\"https://openlevelup.net/?l=1#21/45.07059/7.69218 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+  "author": "A.Carlone"
 },
 {
   "tag": "mappa_bar",
@@ -312,7 +310,8 @@
   "responses": [
     "Puoi vedere il bar qui: <a href=\"https://openlevelup.net/?l=1#21/45.07075/7.69230 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del bar: <a href=\"https://openlevelup.net/?l=1#21/45.07075/7.69230 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+ "author": "A.Carlone"
 },
 {
   "tag": "mappa_sala_insegnanti",
@@ -330,7 +329,8 @@
   "responses": [
     "Puoi vedere la sala docenti qui: <a href=\"https://openlevelup.net/?l=0#21/45.07101/7.69250 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata della sala docenti: <a href=\"https://openlevelup.net/?l=0#21/45.07101/7.69250 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+  "author": "A.Carlone"
 },
 {
   "tag": "mappa_biblioteca",
@@ -348,7 +348,8 @@
   "responses": [
     "Puoi vedere la bibioteca qui: <a href=\"https://openlevelup.net/?l=0#21/45.07078/7.69243 \" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata della biblioteca: <a href=\"https://openlevelup.net/?l=0#21/45.07078/7.69243 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+ "author": "A.Carlone"
 },
 {
   "tag": "mappa_scuola_piano_terra",
@@ -364,7 +365,8 @@
   "responses": [
     "Puoi consultare la mappa del piano terra qui: <a href=\"https://openlevelup.net/?l=0#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del piano terra: <a href=\"https://openlevelup.net/?l=0#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "mappa_scuola_piano_primo",
@@ -383,7 +385,8 @@
   "responses": [
     "Puoi consultare la mappa del primo piano  qui: <a href=\"https://openlevelup.net/?l=1#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del primo piano : <a href=\"https://openlevelup.net/?l=1#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "mappa_scuola_piano_secondo",
@@ -402,7 +405,8 @@
   "responses": [
     "Puoi consultare la mappa del secondo piano  qui: <a href=\"https://openlevelup.net/?l=2#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del secondo piano : <a href=\"https://openlevelup.net/?l=2#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "mappa_scuola_piano_terzo",
@@ -421,7 +425,8 @@
   "responses": [
     "Puoi consultare la mappa del terzo piano  qui: <a href=\"https://openlevelup.net/?l=3#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del terzo piano : <a href=\"https://openlevelup.net/?l=3#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "mappa_scuola_piano_quarto",
@@ -440,7 +445,8 @@
   "responses": [
     "Puoi consultare la mappa del quarto piano  qui: <a href=\"https://openlevelup.net/?l=4#19/45.07083/7.69240\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata del quarto piano : <a href=\"https://openlevelup.net/?l=4#19/45.07083/7.69240 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "mappa_palestra",
@@ -454,7 +460,8 @@
   "responses": [
     "Puoi consultare la mappa della palestra qui: <a href=https://openlevelup.net/?l=0#21/45.07062/7.69238 \"\" target=\"_blank\">Apri la mappa</a>",
     "Ecco la mappa dettagliata della palestra : <a href=\"https://openlevelup.net/?l=0#21/45.07062/7.69238 \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "avogreen",
@@ -475,7 +482,8 @@
     "In Avogadro c'è il progetto AVOGREEN, per una scuola sostenibile",
     "Grazie al  progetto AvoGreen la scuola fa parte della rete delle scuole eco attive della Regione Piemonte",
     "Il progetto AvoGreen si occupa di rendere la scuola più sostenibile"
-]
+],
+"author": "A.Carlone"
 },
 {
   "tag": "sitoWeb",
@@ -488,7 +496,8 @@
   "responses": [
     "Puoi consultare il sito web della scuola: <a href=\"https://www.itisavogadro.edu.it \" target=\"_blank\">Apri il sito Web</a>",
     "Ecco la mappa dettagliata della scuola: <a href=\"https://www.itisavogadro.edu.it \" target=\"_blank\">Clicca qui</a>"
-]
+],
+"author": "A.Carlone"
 }
     ]
 }
