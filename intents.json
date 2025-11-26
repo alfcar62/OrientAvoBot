@@ -130,6 +130,38 @@
             ],
             "author": "A.Carlone"
           },
+          {
+            "tag": "dsga",
+            "patterns": [  
+                "Come si chiama il dsga?",
+                "Come si chiama il direttore amministrativo?",
+                "Chi è a capo dell'amministrazione?",
+                "Amministrazione?",
+                "direttore amministrazione?"         
+            ],
+            "responses": [
+              "il D.S.G.A. è il dott. Paolo Astuti",
+              "il Direttore amministrativo è il dott. Paolo Astuti", 
+              "La direzione amministrativa è coordinata dal dott. Paolo Astuti"
+            ],
+            "author": "A.Carlone"
+          },
+           {
+            "tag": "direzioneTecnica",
+            "patterns": [  
+                "Come si chiama il responsabiule dell'ufficio tecnico?",
+                "Chi dirige l'ufficio tecnico?",
+                "Come funziona l'ufficio tecnico?",
+                "Chi gestisce la sicurezza?",
+                "Quale referente tecnico?"         
+            ],
+            "responses": [
+              "L'ufficio tecnico è coordinato dal prof. Antonio Mandarano",
+              "A capo dell'ufficio tecnico è il prof. Antonio Mandarano", 
+              "Il prof. Antonio Mandarano coordina l'ufficio tecnico e si occupa della sicurezza"
+            ],
+            "author": "A.Carlone"
+          },
          {
             "tag": "QuantiStudenti",
             "patterns": [  
@@ -176,21 +208,42 @@
             ],
             "responses": [
               "Puoi essere più preciso?",
-              "Nella nostra scuola ci sono quattro sezioni di informatica, tre di liceo, una di meccanico ed una di elettrotecnica. Esiste anche un progetto Cambridge in lingua inglese"
+              "Nella nostra scuola ci sono quattro sezioni di informatica, tre di liceo, una di meccanico ed una di elettrotecnica. Esiste anche un progetto Cambridge in lingua inglese e un corso serale"
             ],
             "author": "A.Carlone"
            },
            {
-            "tag": "QuanteSezioniLiceo",
+            "tag": "Cambridge",
             "patterns": [  
-                "Quante sezioni di liceo ci sono?",
-                "Numero di sezioni di liceo?",
-                "Liceo" 
+                "Cosa si fa al Cambridge?",
+                "Cambridge?",
+                "Corso Cambridge?",
+                "Progetto Cambridge?",
+                 "Corsi in lingua inglese?" 
             ],
             "responses": [
-              "Nella nostra scuola ci sono 3 sezioni di liceo scientifico tecnologico (A,B,C)",
-              "Nella nostra scuola ci sono tre sezioni di liceo",
-              "Esistono tre sezioni di Liceo Scientifico Tecnologico"
+              "Esiste un progetto  Cambridge del liceo e tecnico Informtico che svolge lezioni in lingua inglese",
+              "Nella nostra scuola è attivo un progetto  Cambridge in lingua inglese, per ora per Liceo e Tecnico Informatico"
+            ],
+            "author": "A.Carlone"
+           },
+           {
+            "tag": "PCTO",
+            "patterns": [  
+                "Si fanno progetti?",
+                "Progetti?",
+                "Quanti progetti",
+                "PCTO",
+                "Formazione lavoro",
+                "FLS",
+                "Alternanza scuola lavoro",
+                "Mondo del lavoro",
+                "Orientamento"
+            ],
+            "responses": [
+              "Sono tanti i progetti che si realizzano nella nostra scuola",
+              "Moltissimi progetti vengono realizzati per avvicinare gli studenti al mondo del lavoro",
+              "Molti i progetti in collaborazione con Aziende, associazioni e mondo dell'università per orientare al mondo del lavoro e alle scelte future"
             ],
             "author": "A.Carlone"
            },
@@ -229,6 +282,43 @@
             ],
             "author": "A.Carlone"
            },
+           {
+            "tag": "posizione",
+            "patterns": [  
+                "Come raggiumngere la scuola?",
+                "Come si raggiunge l'Avogadro?",
+                "Quali mezzi devo prendere per venire a scuola?",
+                "Quali fermate?",
+                "Indirizzo?",
+                "Dove si trova?"     
+            ],
+            "responses": [
+              "La scuola si trova in corso S.Maurizio 8, in pieno centro di Torino",
+              "La scuola si trova in corso S.Maurizio 8,e facilmente raggiungibile con treno, tram e bus",
+               "La scuola si trova in corso S.Maurizio 8,e facilmente raggiungibile con treno, tram e bus, c'è anche un ampio cortile con posti per biciclette e monopattini"
+            ],
+            "author": "A.Carlone"
+           },
+           {
+            "tag": "mobilità",
+            "patterns": [  
+                "Come è gestita la mobilità?",
+                "mobilità sostenibile?",
+                "Come venire a scuola in modo sostenibile?",
+                "Posso venire in bicicletta?",
+                "Posso venire in macchina?",
+                "C'è un parcheggio di auto?",
+                "C'è un parcheggio di biciclette?",
+                 "se vengo in bici o monopattini?"                               
+            ],
+            "responses": [
+              "La scuola si trova nel centro della città e c'è un parcheggio bici all'interno",
+              "Per venire a scuola si consiglia una mobilità sostenibile (principalmente mezzi pubblici e bicicletta)",
+               "La scuola promuove la mobilità sostenibile.C'è una ampio parcheggio di biciclette sia all'interno che all'esterno"
+            ],
+            "author": "A.Carlone"
+           },
+
         {
             "tag": "grazie",
             "patterns": [
