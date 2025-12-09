@@ -1,8 +1,0 @@
-setuptools>=65.5.1
-wheel
-flask
-flask-cors
-gunicorn
-scikit-learn
-numpy
-scipy
