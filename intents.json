@@ -150,7 +150,9 @@
         "quale nome la preside",
         "nome preside",
         "qual'è il nome della preside?",
-        "nome della preside"
+        "nome della preside",
+        "chi dirige la scuola?",
+        "chi è a capo della scuola?"
       ],
       "responses": [
         "Il dirigente si chiama Anna Luisa Chiappetta",
@@ -171,7 +173,8 @@
         "vice preside?",
         "Chi è il dirigente vicario?",
         "Chi è il vicepreside?",
-        "Chi è la vicepreside?"
+        "Chi è la vicepreside?",
+        "chi gestisce la parte organizzativa?"
       ],
       "responses": [
         "La vicepreside si chiama Laura Panaro",
@@ -270,7 +273,10 @@
         "Corso Cambridge?",
         "Progetto Cambridge?",
         "Corsi in lingua inglese?",
-        "contatti"
+        "contatti",
+        "cambridge",
+        "inglese",
+        "lingua straniera"
       ],
       "responses": [
         "Esiste un progetto  Cambridge del liceo e tecnico Informtico che svolge lezioni in lingua inglese",
@@ -309,7 +315,8 @@
         "FLS",
         "Alternanza scuola lavoro",
         "Mondo del lavoro",
-        "Orientamento"
+        "Orientamento",
+        "quali progetti stranieri"
       ],
       "responses": [
         "Sono tanti i progetti che si realizzano nella nostra scuola",
@@ -475,7 +482,8 @@
         "Hai una mappa della sala docenti?",
         "Mappa sala insegnanti",
         "Mappa sala docenti",
-        "hai la mappa della aula docenti?"
+        "hai la mappa della aula docenti?",
+        "hai una mappa dell'aula docenti?"
       ],
       "responses": [
         "Puoi vedere la sala docenti qui: <a href=\"https://openlevelup.net/?l=0#21/45.07101/7.69250 \" target=\"_blank\">Apri la mappa</a>",
@@ -491,7 +499,10 @@
         "Hai una mappa della biblioteca?",
         "Mappa biblioteca",
         "Mappa biblio teca",
-        "Mappa libreria "
+        "Mappa libreria ",
+        "mappa biblioteca",
+        "hai una mappa della bibloteca?",
+        "mappa dove ci sono libri?"
       ],
       "responses": [
         "Puoi vedere la bibioteca qui: <a href=\"https://openlevelup.net/?l=0#21/45.07078/7.69243 \" target=\"_blank\">Apri la mappa</a>",
@@ -838,7 +849,11 @@
         "dove posso trovare la palestra?",
         "c'è una palestra?",
         "c'è palestra?",
-        "Palestra"
+        "Palestra",
+        "dove si fa ginnastica?",
+        "dove si fa sport?",
+        "dove si fa educazione fisica?",
+        "dove si può fare sport?"
       ],
       "responses": [
         "Al piano terra, dal centralino vai in fondo al corridoio, poi a destra ci sono le due palestre",
@@ -862,11 +877,84 @@
         "c'è sala insegnanti?",
         "Sala insegnanti",
         "aula docenti",
-        "sala docenti"
+        "sala docenti",
+        "dove posso trovare gli insegnanti?",
+        "dove stanno i docenti?",
+        "dove stanno gli insegnanti?"
       ],
       "responses": [
         "Al piano terra, dopo il centralino vai nel corridoio, dove trovi le colonne storiche gira subito a destra e trovi l'aula docenti",
         "Dall'ingresso, dopo il centralino trovi uno spiazzo con le colonne storiche. Gira subito a destra e trovi l'aula docenti"
+      ],
+      "author": "web-admin"
+    },
+    {
+      "tag": "estero",
+      "patterns": [
+        "ci sono possibilità di studio all'estero?",
+        "vi sono progetti erasmus?",
+        "si fanno progetti erasmus?",
+        "si fanno progetti internazionali?",
+        "la scuola è accreditata Erasmus?",
+        "internazionale",
+        "internazionali"
+      ],
+      "responses": [
+        "A scuola vi sono parecchie possibilità per progetti e studio all'estero",
+        "La scuola è accreditata per progetti Erasmus all'estero",
+        "La scuola effettua parecchi progetti internazionali Erasmus"
+      ],
+      "author": "web-admin"
+    },
+    {
+      "tag": "biblioteca",
+      "patterns": [
+        "dov'è la biblioteca?"
+      ],
+      "responses": [
+        "Al piano terra, dal centralino vai avanti 20 metri e poi a destra"
+      ],
+      "pending": false
+    },
+    {
+      "tag": "mappa_vicepresidenza",
+      "patterns": [
+        "dove si trova la vicepresidenza?",
+        "dov'è la vicepreside?",
+        "dov'è la vicepresidenza?",
+        "dov'è l'ufficio della vicepreside?",
+        "dove si trova la vicepreside?"
+      ],
+      "responses": [
+        "al piano terra, all'ingresso corridoio a sinistra e si trovano gli uffici della vicepresidenza"
+      ],
+      "author": "web-admin"
+    },
+    {
+      "tag": "mappa_didattica",
+      "patterns": [
+        "dove si trova la segreteria didattica?"
+      ],
+      "responses": [
+        "al piano terra, all'ingresso corridoio a destra e si trovano gli uffici della didattica"
+      ],
+      "author": "web-admin"
+    },
+    {
+      "tag": "mappa_presidenza",
+      "patterns": [
+        "dove si trova l'ufficio della presidenza?",
+        "come posso raggiungere il preside?",
+        "come posso trovare il preside?",
+        "come posso raggiungere la preside?",
+        "come posso trovare la preside?",
+        "dov'è l'ufficio della presidenza?",
+        "dov'è l'ufficio della preside?",
+        "dov'è l'ufficio del preside?",
+        "dove trovo il preside?"
+      ],
+      "responses": [
+        "consiglio di chiedere al centralino e prenotare un appuntamento"
       ],
       "author": "web-admin"
     }
