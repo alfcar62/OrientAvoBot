@@ -21,7 +21,13 @@
         "Buondì",
         "ciap",
         "cia",
-        "ola"
+        "ola",
+        "ehila bello",
+        "ehila bellissimo",
+        "cosa sei?",
+        "ehila",
+        "ehi",
+        "ehi caro"
       ],
       "responses": [
         "Ciao! Questa è l'Avogadro, la nostra scuola, cosa vuoi sapere?",
@@ -50,7 +56,8 @@
         "A cosa servi?",
         "Cosa posso fare per te?",
         "Cosa posso fare?",
-        "Cosa devo fare?"
+        "Cosa devo fare?",
+        "che mi puoi dire?"
       ],
       "responses": [
         "Ciao! Sono Gustavo, un bot automatico e posso aiutarti a conoscere meglio la nostra scuola",
@@ -880,7 +887,11 @@
         "sala docenti",
         "dove posso trovare gli insegnanti?",
         "dove stanno i docenti?",
-        "dove stanno gli insegnanti?"
+        "dove stanno gli insegnanti?",
+        "dov'è la stanza dei prof?",
+        "dov'è la stanza dei maestri?",
+        "dov'è la stanza dei professori?",
+        "dov'è la stanza degli insegnanti?"
       ],
       "responses": [
         "Al piano terra, dopo il centralino vai nel corridoio, dove trovi le colonne storiche gira subito a destra e trovi l'aula docenti",
@@ -957,6 +968,33 @@
         "consiglio di chiedere al centralino e prenotare un appuntamento"
       ],
       "author": "web-admin"
+    },
+    {
+      "tag": "prova",
+      "patterns": [
+        "cosa provo?"
+      ],
+      "responses": [
+        "Fai come vuoi"
+      ]
+    },
+    {
+      "tag": "bagno",
+      "patterns": [
+        "dove trovo il bagno?",
+        "dov'è il bagno?",
+        "dov'è la toilette?",
+        "devo andare in bagno",
+        "dove trovo il gabinetto?",
+        "dov'è il gabinetto?",
+        "come trovo il gabinetto?", 
+        "come trovo la toilette?"
+      ],
+      "responses": [
+        "dipende dal piano. Ad esempio dall'ingresso principale  al piano terra di fronte a sinistra c'è un bagno",
+        "ci sono parecchi bagni a scuola. Chiedi al personale",
+        "Al piano terra c'è un bagno subito vicino all'ingresso, ma ogni piano è dotato di più bagni"
+      ]
     }
   ]
 }
