@@ -1,4 +1,5 @@
-  # OrientAvoBot (GustAVO) (versione leggera con scikit-learn)
+  # OrientAvoBot (GustAVO) (versione 2 -  leggera con scikit-learn)
+  # TF-IDF + MLP Classifier
   Chatbot per orientarsi a scuola, sviluppata in IIS Avogadro (Torino)
   con il supporto degli studenti e di chatGPT (vibe Coding).
   Obiettivo: Sperimentare python e AI per un progetto concreto.
