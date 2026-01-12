@@ -1,5 +1,6 @@
 # GustAVO Chatbot dell'IIS Avogadro di Torino
 # versione con rete neurale, cronologia e contesto
+# Versione TF-IDF + MLP Classifier
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import json
@@ -17,7 +18,7 @@ app = Flask(__name__, static_folder=".")
 CORS(app)
 
 # Carica intents.json
-with open(os.path.dirname(os.path.abspath(__file__)) + "/intents.json", "r", encoding="utf-8") as f:
+with open("intents.json", "r", encoding="utf-8") as f:
     intents = json.load(f)["intents"]
 
 # Prepara dataset (patterns e tag)
@@ -40,8 +41,15 @@ tag_to_idx = {tag: i for i, tag in enumerate(set(tags))}
 idx_to_tag = {i: tag for tag, i in tag_to_idx.items()}
 y = [tag_to_idx[tag] for tag in tags]
 
-# Rete neurale semplice
-mlp = MLPClassifier(hidden_layer_sizes=(10,), max_iter=500, random_state=42, solver='adam')
+
+# Rete neurale abbastanza semplice
+mlp = MLPClassifier(
+        hidden_layer_sizes=(20, 10),  # Due layer, il primo con 20 neuroni, il secondo con 10
+        max_iter=1000,
+        random_state=42,
+        solver='adam',
+        alpha=0.001
+    )
 mlp.fit(X, y)
 
 # Cronologia dei messaggi per sessioni
