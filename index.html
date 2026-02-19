@@ -125,6 +125,31 @@ const voiceToggle = document.getElementById("voiceToggle");
 
 let mouthInterval, eyeInterval;
 
+function setUUID(){
+	var cookie = document.cookie.split(";");
+
+	cookie.forEach((element, index) => cookie[index] = element.trim().split("="));
+	var create_cookie = true;
+	var uuid;
+	
+	cookie.forEach((element) => {
+		if(element[0]=="uuid"){
+			uuid = element[1];
+			create_cookie = false;
+			console.log("Cookie trovato.");
+		}
+	});
+
+	if(create_cookie){
+		//Crea e stora il cookie
+		uuid = Date.now();
+		const d = new Date();
+		let year = d.getFullYear() + 1;
+		document.cookie = "uuid=" + uuid + ";expires=Mon, 01 Jan " + year + " 00:00:00 UTC;path=/";
+		console.log("Cookie creato.");
+	}
+	return uuid;
+}
 // ----------------- ANIMAZIONI -----------------
 function animateMouthStart() {
   mouthInterval = setInterval(() => {
@@ -219,18 +244,21 @@ async function sendMessage() {
   messages.scrollTop = messages.scrollHeight;
 
   input.value = "";
-
+  
+  const uuid = setUUID();
+  
   try {
     const res = await fetch("/chat", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ message: msg })
+      body: JSON.stringify({ message: msg, u_id: uuid })
     });
 
     const data = await res.json();
     botSpeak(data.answer || "Non ho capito bene 😅");
-  } catch {
+  } catch (error) {
     botSpeak("Errore di connessione.");
+	console.log("Errore nella richiesta: " + error);
   }
 }
 </script>

@@ -10,6 +10,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neural_network import MLPClassifier
 import warnings
 from sklearn.exceptions import ConvergenceWarning
+from datetime import datetime
 
 # Soppressione warning di convergenza
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
@@ -18,7 +19,7 @@ app = Flask(__name__, static_folder=".")
 CORS(app)
 
 # Carica intents.json
-with open("intents.json", "r", encoding="utf-8") as f:
+with open(os.path.dirname(os.path.abspath(__file__)) + "/intents.json", "r", encoding="utf-8") as f:
     intents = json.load(f)["intents"]
 
 # Prepara dataset (patterns e tag)
@@ -41,21 +42,52 @@ tag_to_idx = {tag: i for i, tag in enumerate(set(tags))}
 idx_to_tag = {i: tag for tag, i in tag_to_idx.items()}
 y = [tag_to_idx[tag] for tag in tags]
 
-
-# Rete neurale abbastanza semplice
+# Rete neurale semplice
+# mlp = MLPClassifier(hidden_layer_sizes=(10,), max_iter=500, random_state=42, solver='adam')
 mlp = MLPClassifier(
         hidden_layer_sizes=(20, 10),  # Due layer, il primo con 20 neuroni, il secondo con 10
         max_iter=1000,
         random_state=42,
         solver='adam',
         alpha=0.001
-    )
+)
 mlp.fit(X, y)
 
 # Cronologia dei messaggi per sessioni
 conversations = {}  # session_id -> lista di messaggi
 N_HISTORY = 2       # numero di messaggi precedenti da usare nel contesto
 MAX_HISTORY = 10    # numero massimo di messaggi salvati per sessione
+
+LOG_FILE = os.path.dirname(os.path.abspath(__file__)) + "/chat_log.json"
+
+def save_chat_log(uuid, user_message, intent, confidence, answer):
+    log_entry = {
+        "id": str(datetime.now().timestamp()),
+        "uuid": uuid,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "user_message": user_message,
+        "intent": intent,
+        "confidence": round(float(confidence), 3),
+        "answer": answer
+    }
+
+    # Carica log esistenti
+    if os.path.exists(LOG_FILE):
+        with open(LOG_FILE, "r", encoding="utf-8") as f:
+            try:
+                logs = json.load(f)
+            except json.JSONDecodeError:
+                logs = []
+    else:
+        logs = []
+
+    logs.append(log_entry)
+
+    # Scrive su file
+    with open(LOG_FILE, "w", encoding="utf-8") as f:
+        json.dump(logs, f, ensure_ascii=False, indent=2)
+        
+
 
 def classify_intent(user_message, threshold=0.3):
     """Ritorna (intent, confidence) per un messaggio utente usando la rete neurale"""
@@ -78,7 +110,7 @@ def generate_response(intent_tag):
 @app.route('/img/<path:filename>')
 def serve_images(filename):
     try:
-        return send_from_directory('img', filename)
+        return send_from_directory(os.path.dirname(os.path.abspath(__file__)) + '/img', filename)
     except FileNotFoundError:
         return jsonify({"error": "Image not found"}), 404
 
@@ -91,14 +123,31 @@ def debug_files():
     return jsonify({
         "img_folder_exists": os.path.exists('img'),
         "images_in_img_folder": img_files,
-        "logo_exists": "logoAvogadro.png" in img_files,
+        "logo_exists": os.path.dirname(os.path.abspath(__file__)) + "/logoAvogadro.png" in img_files,
         "current_directory": os.getcwd()
     })
 
 # Route per servire la home page
 @app.route("/")
 def index():
-    return send_from_directory(".", "index.html")
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), "index.html")
+    
+# Route per le cronologie delle chat
+@app.route("/feedback/<string:method>", methods=["GET"])
+def feedback(method):
+    match method:
+        case "get":
+            with open(LOG_FILE, "r", encoding="utf-8") as f:
+                try:
+                    intents = json.load(f)
+                    return intents
+                except json.decoder.JSONDecodeError:
+                    return jsonify({"status": "400", "message": "JSON non formattato correttamente o vuoto."})
+        case "delete":
+            open(LOG_FILE, "w", encoding="utf-8").close()
+            return jsonify({"status": "ok", "message": "Feedback eliminati con successo."})
+        case _:
+            return jsonify({"status": "400", "message": "Method non consentito."})
 
 # Route di test
 @app.route("/test", methods=["GET"])
@@ -110,6 +159,7 @@ def test():
 def chat():
     data = request.get_json()
     user_message = data.get("message", "").strip()
+    uuid = data.get("u_id", "-1")
     session_id = data.get("session_id", "default")  # default se non fornito
 
     if not user_message:
@@ -129,6 +179,9 @@ def chat():
         bot_reply = "Non ho capito bene, puoi riformulare?"
     else:
         bot_reply = generate_response(intent)
+        
+    # salva su file JSON
+    save_chat_log(uuid, user_message, intent, confidence, bot_reply)
 
     history.append({"role": "bot", "text": bot_reply})
     conversations[session_id] = history[-MAX_HISTORY:]  # salva solo ultimi MAX_HISTORY messaggi
@@ -141,5 +194,5 @@ def chat():
     })
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 5300))
     app.run(host="0.0.0.0", port=port)
